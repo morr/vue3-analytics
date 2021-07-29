@@ -1,6 +1,6 @@
 {
   "name": "@morr/vue3-analytics",
-  "version": "0.0.0-development",
+  "version": "1.0.0",
   "description": "Google Analytics plugin for Vue 3",
   "repository": {
     "type": "git",
