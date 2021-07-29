@@ -1,10 +1,10 @@
 {
-  "name": "vue-analytics",
+  "name": "@morr/vue3-analytics",
   "version": "0.0.0-development",
-  "description": "Google Analytics plugin for Vue",
+  "description": "Google Analytics plugin for Vue 3",
   "repository": {
     "type": "git",
-    "url": "https://github.com/MatteoGabriele/vue-analytics"
+    "url": "https://github.com/morr/vue3-analytics"
   },
   "scripts": {
     "commit": "git-cz",
@@ -40,9 +40,6 @@
     "email": "m.gabriele.dev@gmail.com"
   },
   "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/MatteoGabriele/vue-analytics/issues"
-  },
   "homepage": "https://github.com/MatteoGabriele/vue-analytics#readme",
   "devDependencies": {
     "@babel/core": "^7.7.2",

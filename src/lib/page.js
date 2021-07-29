@@ -42,7 +42,7 @@ export function trackRoute (route) {
   }
 
   const { autoTracking } = config
-  const { meta: { analytics = {} } } = route
+  const { meta: { analytics = {} } } = route.value
   const proxy = analytics.pageviewTemplate || autoTracking.pageviewTemplate
 
   if (autoTracking.screenview && !route.name) {
@@ -67,11 +67,11 @@ export function trackRoute (route) {
       }
     } = config
 
-    const queryString = getQueryString(route.query)
+    const queryString = getQueryString(route.value.query)
     const base = router && router.options.base
     const needsBase = prependBase && base
 
-    let path = route.path + (transformQueryString ? queryString : '')
+    let path = route.value.path + (transformQueryString ? queryString : '')
     path = needsBase ? getBasePath(base, path) : path
 
     page(path)
@@ -85,8 +85,8 @@ export function autoTracking () {
     return
   }
 
-  router.onReady(() => {
-    if (autoTracking.pageviewOnLoad && router.history.ready) {
+  router.isReady().then(() => {
+    if (autoTracking.pageviewOnLoad) {
       trackRoute(router.currentRoute)
     }
 
