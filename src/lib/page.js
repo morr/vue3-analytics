@@ -1,3 +1,4 @@
+import { nextTick } from "vue"
 import config from '../config'
 import set from './set'
 import screenview from './screenview'
@@ -37,6 +38,7 @@ export default function page (...args) {
 }
 
 export function trackRoute (route) {
+  console.log('trackRoute', route.value.fullPath);
   if (isRouteIgnored(route)) {
     return
   }
@@ -87,10 +89,12 @@ export function autoTracking () {
 
   router.isReady().then(() => {
     if (autoTracking.pageviewOnLoad) {
-      trackRoute(router.currentRoute)
+      nextTick(function() {
+        trackRoute(router.currentRoute)
+      });
     }
 
-    router.afterEach(function (to, from) {
+    router.afterEach((to, from) => {
       const { skipSamePath, shouldRouterUpdate } = autoTracking
 
       // Default behaviour of the router when the `skipSamePath` is turned on.
@@ -106,7 +110,7 @@ export function autoTracking () {
       }
 
       // see https://github.com/nuxt-community/analytics-module/issues/8
-      $vue.nextTick().then(() => {
+      nextTick(() => {
         trackRoute(router.currentRoute)
       })
     })
