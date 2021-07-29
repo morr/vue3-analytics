@@ -10,7 +10,7 @@ Start using it your Vue application
 import Vue from 'vue'
 import VueAnalytics from 'vue-analytics'
 
-Vue.use(VueAnalytics, {
+app.use(VueAnalytics, {
   id: 'UA-XXX-X'
 })
 ```
@@ -22,7 +22,7 @@ For all the ES5 users out there, this package uses a default export so if you wa
 ```js
 const VueAnalytics = require('vue-analytics').default
 
-Vue.use(VueAnalytics, { ... })
+app.use(VueAnalytics, { ... })
 ```
 
 ### Usage
@@ -82,7 +82,7 @@ Pass an array of strings for a multiple tracking system. Every hit will be fired
 import Vue from 'vue'
 import VueAnalytics from 'vue-analytics'
 
-Vue.use(VueAnalytics, {
+app.use(VueAnalytics, {
   id: ['UA-XXX-A', 'UA-XXX-B']
 })
 ```
@@ -97,21 +97,21 @@ import VueAnalytics from 'vue-analytics'
 import axios from 'axios'
 
 // a function
-Vue.use(VueAnalytics, {
+app.use(VueAnalytics, {
   id () {
     return 'UA-XXX-A'
   }
 })
 
 // a Promise
-Vue.use(VueAnalytics, {
+app.use(VueAnalytics, {
   id: axios.get('/api/foo').then(response => {
     return response.data
   })
 })
 
 // a function that returns a Promise
-Vue.use(VueAnalytics, {
+app.use(VueAnalytics, {
   id: () => axios.get('/api/foo').then(response => {
     return response.data
   })

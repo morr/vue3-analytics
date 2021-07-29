@@ -1,24 +1,4 @@
-> :warning: Sorry but vue-analytics is not longer maintained. I would suggest you to switch to [vue-gtag](https://github.com/MatteoGabriele/vue-gtag). With love, the guy who made the package.
-
-<p align="center">
-  <img width="180" src="http://i.imgur.com/whvHAT6.png">
-  <br>
-  <br>
-  <a href="https://npm.im/vue-analytics">
-    <img src="https://badgen.net/npm/v/vue-analytics">
-  </a>
-  <a href="https://npm.im/vue-analytics">
-    <img src="https://badgen.net/npm/dm/vue-analytics">
-  </a>
-  <a href="https://travis-ci.org/MatteoGabriele/vue-analytics">
-    <img src="https://badgen.net/travis/MatteoGabriele/vue-analytics/master">
-  </a>
-  <a href="https://bundlephobia.com/result?p=vue-analytics">
-    <img src="https://badgen.net/bundlephobia/minzip/vue-analytics">
-  </a>
-</p>
-
-# vue-analytics
+# vue3-analytics
 
 Vue plugin for Google Analytics
 
@@ -44,7 +24,7 @@ This package only uses analytics.js which doesn't provide that feature.
 
 ## Requirements
 
-Vue ^2.0.0
+Vue ^3.0.0
 
 ## Articles
 
@@ -57,7 +37,7 @@ Vue ^2.0.0
 ## Install
 
 ```bash
-npm install vue-analytics
+npm install @morr/vue3-analytics
 ```
 
 ## User guide
@@ -86,9 +66,3 @@ npm install vue-analytics
 * [Opt-out from Google Analytics](/docs/opt-out.md)
 * [Custom analytics.js URL](/docs/custom-analytics.md)
 * [Debug](/docs/debug.md)
-
-# Issues and features requests
-
-Please drop an issue, if you find something that doesn't work, or a feature request at [https://github.com/MatteoGabriele/vue-analytics/issues](https://github.com/MatteoGabriele/vue-analytics/issues)
-
-Follow me on twitter [@matteo\_gabriele](https://twitter.com/matteo_gabriele)
